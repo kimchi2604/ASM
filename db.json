@@ -1,0 +1,108 @@
+{
+  "projects": [
+    {
+      "id": "b0cd",
+      "name": "Dự án 2",
+      "price": 3434,
+      "date": "2024-06-04",
+      "toDate": "2024-06-15",
+      "size": 5,
+      "desc": "Dự án tuyệt vơi\n"
+    },
+    {
+      "name": "Dự án 1",
+      "price": 10000,
+      "date": "2024-06-14",
+      "toDate": "2024-06-22",
+      "size": 4,
+      "desc": "dự án chất lượng \n",
+      "id": "eMUAguU"
+    },
+    {
+      "id": "0ee7",
+      "name": "Dự án 3",
+      "price": 30,
+      "date": "2024-06-11",
+      "toDate": "2024-06-15",
+      "size": 6,
+      "desc": "Mô tả 1"
+    }
+  ],
+  "users": [
+    {
+      "email": "taipthp33127@fpt.edu.vn",
+      "password": "$2a$10$WZb9nUY/2NCKnCttkSFvB.Ot44QX/EpN9nP9UmFbVKnw5aBiZCXiG",
+      "name": "Phan Thế Tài Tài",
+      "id": "1"
+    },
+    {
+      "email": "taipthp33@fpt.edu.vn",
+      "password": "$2a$10$Qm4z7/zOdldK0qnt71.MKeQIaf//va/kUvWphKCWX.tmjRsJrahz2",
+      "name": "Phan Thế Tài",
+      "id": "2"
+    }
+  ],
+  "task": [
+    {
+      "nameTask": "Dự án 1",
+      "dateTask": "2024-06-12",
+      "toDateTask": "2024-06-16",
+      "descTask": "Mới",
+      "id": "5"
+    },
+    {
+      "nameTask": "dự án 2",
+      "dateTask": "2024-06-01",
+      "toDateTask": "2024-06-13",
+      "descTask": "Mới",
+      "id": "6"
+    },
+    {
+      "nameTask": "dự án 2",
+      "dateTask": "2024-06-08",
+      "toDateTask": "2024-06-22",
+      "descTask": "Đã xong",
+      "id": "7"
+    },
+    {
+      "idProject": "b0cd",
+      "nameTask": "dự án 2 update",
+      "dateTask": "2024-06-01",
+      "toDateTask": "2024-06-19",
+      "descTask": "Mới",
+      "id": "8"
+    },
+    {
+      "id": "713a",
+      "idProject": "b0cd",
+      "nameTask": "Dự án 1",
+      "dateTask": "2024-06-11",
+      "toDateTask": "2024-06-13",
+      "descTask": "Đang làm"
+    },
+    {
+      "idProject": "eMUAguU",
+      "nameTask": "Task 1",
+      "dateTask": "2024-06-11",
+      "toDateTask": "2024-06-13",
+      "descTask": "Đang làm",
+      "id": "ba03"
+    },
+    {
+      "id": "f6b9",
+      "idProject": "eMUAguU",
+      "nameTask": "Task 2",
+      "dateTask": "2024-06-11",
+      "toDateTask": "2024-06-14",
+      "descTask": "Mới"
+    },
+    {
+      "idProject": "0ee7",
+      "nameTask": "Task 3 update",
+      "dateTask": "2024-06-11",
+      "toDateTask": "2024-06-16",
+      "descTask": "Đã xong",
+      "id": "068a"
+    }
+  ]
+}

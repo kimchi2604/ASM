@@ -1,0 +1,130 @@
+<div class="container">
+    <div class="row bg-light">
+        <div class="col-3 border border-bottom-0">
+            <div class="row text-center p-2">
+                <div class="col-12 bg-warning-subtle">
+                    <h2>Trưởng nhóm</h2>
+                </div>
+                <div class="col-12">
+                    <i class="bi bi-person-circle" style="font-size: 70px; "></i>
+                </div>
+                <div class="col-12">
+                    <h2>Kim Chi</h2>
+                    <h3></h3>
+                </div>
+                <div class="col-12 m-1 " style="background-color: white; border-radius: 5px;">
+                    <h6>số lượng thành viên {{project.size}}</h6>
+                </div>
+                <div class="col-12 m-1" style="background-color: white; border-radius: 5px;">
+                    <h6>Chi phí dự án {{project.price}} $</h6>
+                </div>
+                <div class="col-12 m-1" style="background-color: white; border-radius: 5px;">
+                    <h6>Các task đang sử lý 5</h6>
+                </div>
+                <div class="col-12 m-1" style="background-color: white; border-radius: 5px;">
+                    <h6>Tiến độ 20%</h6>
+                </div>
+                <div class="col-12">
+                    <h3>KHÁCH HÀNG</h3>
+                </div>
+                <div class="col-12 m-1" style="background-color: white; border-radius: 5px;">
+                    <h6>Tên Khách Hàng: Kim Chi</h6>
+                </div>
+                <div class="col-12 m-1" style="background-color: white; border-radius: 5px;">
+                    <h6>Địa chỉ: Hà Nội</h6>
+                </div>
+                <div class="col-12 m-1" style="background-color: white;border-radius: 5px;">
+                    <h6>Đã trả</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 p-3" style="background-color: white; height: 630px;; ">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 text-center bg-warning-subtle">
+                    <h5>Tổng thể về dự án</h5>
+                </div>
+                <div class="col-12">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td>Chi phí dự án :</td>
+                                <td><a style="text-decoration: none; color: red; font-weight: 600;">{{project.price}}
+                                        $</a></td>
+                            </tr>
+                            <tr>
+                                <td>Chi phí đã sử dụng : </td>
+                                <td> <a style="text-decoration: none; color: red; font-weight: 600;">{{project.price*0.2}}
+                                        $</a></td>
+                            </tr>
+                            <tr>
+                                <td>Chi phí còn lại :</td>
+                                <td><a style="text-decoration: none; color: red; font-weight: 600;">{{project.price*0.8}}
+                                        $</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-12 text-center bg-warning-subtle">
+                    <h5>Thành viên của nhóm</h5>
+                </div>
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Mã task</th>
+                                <th scope="col">Tên task</th>
+                                <th scope="col">Ngày bắt đầu</th>
+                                <th scope="col">Ngày kết thúc</th>
+                                <th scope="col">trạng thái</th>
+                                <th scope="col">Acction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (item of taskId; track item.id) {
+                            <tr>
+                                <th scope="row">{{item.id}}</th>
+                                <td>{{item.nameTask}}</td>
+                                <td>{{item.dateTask}}</td>
+                                <td>{{item.toDateTask}}</td>
+                                <td>{{item.descTask}}</td>
+                                <td><a class="btn btn-warning"
+                                        [routerLink]="['/projeck/taskUpdate',item.id,project.id]">Update</a><button
+                                        class="btn btn-danger"
+                                        (click)="onDelete(item.id, item.nameTask)">Delete</button></td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="row text-center p-2">
+                <div class="col-12 bg-warning-subtle">
+                    <h2>Chi tiết dự án</h2>
+                </div>
+                <div class="col-12 m-1" style="background-color: white; border-radius: 5px;">
+                    <h6>Tên dự án: {{project.name}}</h6>
+                </div>
+                <div class="col-12 m-1" style="background-color: white; border-radius: 5px;">
+                    <h6>Ngày bắt đầu: {{project.date}}</h6>
+                </div>
+                <div class="col-12 m-1" style="background-color: white;border-radius: 5px;">
+                    <h6>Ngày kết thúc: {{project.toDate}}</h6>
+                </div>
+                <div class="col-12 m-1" style="background-color: white;border-radius: 5px;">
+                    <h6>Số lượng thành viên: {{project.size}}</h6>
+                </div>
+                <div class="col-12 m-1" style="background-color: white;border-radius: 5px;">
+                    <h6>Mô tả: {{project.desc}}</h6>
+                </div>
+                <div class="col-12 my-5">
+                    <h3>Ảnh</h3>
+                </div>
+                <div class="col-12 mt-5">
+                    <img src="https://picsum.photos/200">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

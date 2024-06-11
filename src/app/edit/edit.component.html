@@ -1,0 +1,36 @@
+<div class="container">
+  <form #editFrom="ngForm" (ngSubmit)="onEdit(editFrom.value)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Tên dự án </label>
+      <input type="text" class="form-control"  [(ngModel)]="projects.name" #errName="ngModel" name="name">
+      <p *ngIf='errName.dirty && errName.errors?.["required"]' class="text-danger">Bạn chưa nhập tên dự án</p>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Chi phí dự án</label>
+      <input type="text" class="form-control"  [(ngModel)]="projects.price" #errPrice="ngModel" name="price" >
+      <p *ngIf='errPrice.dirty && errPrice.errors?.["required"]' class="text-danger">Bạn chưa nhập chi phí dự án</p>
+          <p *ngIf='errPrice.dirty && errPrice.errors?.["min"]' class="text-danger">Giá phải lớn hơn 0</p>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Ngày bắt đầu</label>
+      <input type="date" class="form-control"   [(ngModel)]="projects.date" name="date">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Ngày kiết thúc</label>
+      <input type="date" class="form-control"   [(ngModel)]="projects.toDate" name="toDate">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Số người tham gia</label>
+        <input type="number" class="form-control" [(ngModel)]="projects.size" name="size" #errSize="ngModel" required min="4">
+        <p *ngIf='errSize.dirty && errSize.errors?.["required"]' class="text-danger">Bạn chưa nhập số người tham gia</p>
+            <p *ngIf='errSize.dirty && errSize.errors?.["min"]' class="text-danger">Giá phải lớn hơn 4</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Mô tả</label>
+        <textarea name="desc" [(ngModel)]="projects.desc" id="" rows="4" class="form-control"></textarea>
+      </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Sửa dự án</button>
+    </div>
+  </form>
+</div>

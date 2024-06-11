@@ -1,0 +1,35 @@
+<div class="container" style="height: 630px;">
+    <div class="row" >
+      <div class="col-12"><a href="/projeck/add" class="btn btn-success my-5">Thêm dự án</a></div>
+        <div class="listStuden col-12">
+            <table class="table table-bordered text-center">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Tên dự án</th>
+                  <th>Chi phí dự án</th>
+                  <th>Ngày bắt đầu</th>
+                  <th>Ngày kết thúc</th>
+                  <th>Số người tham gia</th>
+                  <th>Mô tả</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(item of listProjects;track item.id){
+                  <tr>
+                    <td>{{item.id}}</td>
+                    <td><a style="color: #000;" [routerLink]="['/projeck/detail',item.id]">{{item.name}}</a></td>
+                    <td>{{item.price}} $</td>
+                    <td>{{item.date}}</td>
+                    <td>{{item.toDate}}</td>
+                    <td>{{item.size}}</td>
+                    <td>{{item.desc}}</td>
+                    <td><a class="btn btn-danger mx-3" [routerLink]="['/projeck/edit',item.id]">Edit</a><button class="btn btn-warning" type="submit" (click)="onDelete(item.id, item.name)" >Delete</button> <a class="btn btn-primary mx-3" [routerLink]="['/projeck/task',item.id]">Tạo task</a></td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div> 
+    </div>
+</div>

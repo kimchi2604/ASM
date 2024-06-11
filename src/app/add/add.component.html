@@ -1,0 +1,37 @@
+<div class="container">
+    <form #addFrom = "ngForm" (ngSubmit)="onAdd((addFrom.value))" >
+        <div class="mb-3">
+          <label class="form-label">Tên dự án</label>
+          <input type="text" class="form-control" ngModel #errName="ngModel" name="name" required>
+          <p *ngIf='errName.dirty && errName.errors?.["required"]' class="text-danger">Bạn chưa nhập tên dự án</p>
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Chi phí dự án</label>
+          <input type="number" class="form-control" ngModel #errPrice="ngModel" name="price" required min="1" >
+          <p *ngIf='errPrice.dirty && errPrice.errors?.["required"]' class="text-danger">Bạn chưa nhập chi phí dự án</p>
+          <p *ngIf='errPrice.dirty && errPrice.errors?.["min"]' class="text-danger">Giá phải lớn hơn 0</p>
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Ngày bắt đầu</label>
+          <input type="date" class="form-control" ngModel #errDate="ngModel" name="date" required>
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Ngày kết thúc</label>
+          <input type="date" class="form-control" ngModel name="toDate" #errToDate="ngModel">
+          <p *ngIf='errToDate.dirty && new Date(errDate.value) > new Date(errToDate.value)' class="text-danger">Ngày bắt đầu không thế lớn hơn ngày kết thúc</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Số người tham gia</label>
+            <input type="number" class="form-control" ngModel name="size" #errSize="ngModel" required min="4">
+            <p *ngIf='errSize.dirty && errSize.errors?.["required"]' class="text-danger">Bạn chưa nhập số người tham gia</p>
+            <p *ngIf='errSize.dirty && errSize.errors?.["min"]' class="text-danger">Giá phải lớn hơn 4</p>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mô tả</label>
+            <textarea name="desc" ngModel id="" rows="4" class="form-control"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Thêm dự án</button>
+          </div>
+      </form>
+</div>
